@@ -9,6 +9,7 @@ import {Equipe} from './equipe';
 export class PokemonService {
 
   apiUrl: string = 'https://pokeapi.co/api/v2/';
+  apiUrlAbilite: string = 'https://pokeapi.co/api/v2/';
 
   constructor(private http: HttpClient) { }
   dresseur: Dresseur;
@@ -38,6 +39,14 @@ export class PokemonService {
 
   getPokemonByName(name: string) {
       return this.http.get(this.apiUrl + 'pokemon/' + name);
+  }
+
+  getPokemonById(id: number) {
+    return this.http.get(this.apiUrl + 'pokemon/' + id);
+  }
+
+  getAbiliteByName(name: string) {
+    return this.http.get(this.apiUrlAbilite + 'ability/' + name);
   }
 
 
