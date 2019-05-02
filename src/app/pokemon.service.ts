@@ -14,9 +14,9 @@ export class PokemonService {
   dresseur: Dresseur;
 
   dresseurs: Dresseur[] = [
-    new Dresseur(1, 'dresseur 1', this.dresseur.equipe.getEquipe()),
-    new Dresseur(2, 'dresseur 2', this.dresseur.equipe.getEquipe()),
-    new Dresseur(2, 'dresseur 3', this.dresseur.equipe.getEquipe())
+    new Dresseur(1, 'dresseur 1', new Equipe(1, null)), //this.dresseur.equipe.getEquipe()),
+    new Dresseur(2, 'dresseur 2', new Equipe(2, null)), //this.dresseur.equipe.getEquipe()),
+    new Dresseur(2, 'dresseur 3', new Equipe(3, null)), //this.dresseur.equipe.getEquipe())
   ];
 
   getDresseurs() {
@@ -36,7 +36,7 @@ export class PokemonService {
   }
 
   getPokemonByName(name: string) {
-    return this.http.get(this.apiUrl + 'pokemon/' + name);
+      return this.http.get(this.apiUrl + 'pokemon/' + name);
   }
 
 

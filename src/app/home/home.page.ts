@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {PokemonService} from '../pokemon.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -9,11 +8,7 @@ import {Router} from '@angular/router';
 })
 export class HomePage {
 
-  nom: string;
-  
-  constructor(private  apiService: PokemonService, private router: Router) {
-
-
+  constructor(private router: Router) {
   }
 
     VerPageModifier() {

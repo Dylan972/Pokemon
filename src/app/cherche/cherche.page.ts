@@ -16,7 +16,8 @@ export class CherchePage implements OnInit {
   photoMale: string;
   photoFemele: string;
   photoShiny: string;
-  constructor(private  apiService: PokemonService) {
+
+  constructor(private apiService: PokemonService) {
 
   }
 

@@ -12,8 +12,8 @@
 
   <H2> Nom du pokemon : {{ nomPokemon}} </H2>
   <h2> Type du pokemon : {{ typePokemon }}</h2>
-  <h2> Attaques du pokemon : {{listAttaque[0].ability.name}} </h2>
-  <h2> Attaques du pokemon : {{listAttaque[1].ability.name}} </h2>
+  <h2> Attaques du pokemon : {{listAttaque[0]?.ability.name}} </h2>
+  <h2> Attaques du pokemon : {{listAttaque[1]?.ability.name}} </h2>
   <img src="{{photoMale}}" alt="photo du pokemon">
 
   <p>Femelle</p>
