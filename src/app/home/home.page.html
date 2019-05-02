@@ -10,5 +10,18 @@
 </ion-header>
 
 <ion-content>
+<h1> POKEMON DU JOUR :</h1>
+  <H2> Nom du pokemon : {{ nomPokemon}} </H2>
+  <h2> Type du pokemon : {{ typePokemon }}</h2>
+  <h2> Attaques du pokemon : {{listAttaque[0]?.ability.name}} </h2>
+  <h2> Attaques du pokemon : {{listAttaque[1]?.ability.name}} </h2>
+  <img src="{{photoMale}}" alt="photo du pokemon">
+
+  <p>Femelle</p>
+  <img src="{{photoFemele}}" alt="photo du pokemon">
+
+  <p>Shinny</p>
+  <img src="{{photoShiny}}" alt="photo du pokemon">
+
   <ion-button (click)="VerPageModifier()">Je veux trouver mon Pokemon !!!!</ion-button>
 </ion-content>

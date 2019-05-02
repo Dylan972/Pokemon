@@ -24,6 +24,11 @@ export class AppComponent {
       title: 'Dresseurs',
       url: '/dresseur-liste',
       icon: 'list'
+    },
+    {
+      title: 'Chercher',
+      url: '/cherche',
+      icon: 'list'
     }
   ];
 
