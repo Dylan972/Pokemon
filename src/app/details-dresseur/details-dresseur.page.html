@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>detailsDresseur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Nom du dresseur</ion-label>
+    <ion-label>{{dresseur.name}}</ion-label>
+  </ion-item>
+
+            <ion-list *ngFor="let pokemon of this.ps.dresseur">
+                <ion-label>
+                  {{dresseur.equipe.getEquipe()}}
+                </ion-label>
+            </ion-list>
+
+</ion-content>
