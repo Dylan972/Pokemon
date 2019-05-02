@@ -4,6 +4,17 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import * as firebase from 'firebase/app';
+import 'firebase/database';
+
+const config = {
+  apiKey: "AIzaSyA_jjKJcW9IuH1UDJdCpxuRnAXbrlU4_kk",
+  authDomain: "pokemonprojet44.firebaseapp.com",
+  databaseURL: "https://pokemonprojet44.firebaseio.com",
+  projectId: "pokemonprojet44",
+  storageBucket: "pokemonprojet44.appspot.com",
+  messagingSenderId: "420925043443"
+};
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -40,5 +51,6 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+    firebase.initializeApp(config);
   }
 }

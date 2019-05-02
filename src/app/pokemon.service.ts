@@ -13,10 +13,11 @@ export class PokemonService {
   constructor(private http: HttpClient) { }
   dresseur: Dresseur;
 
+  pokemonList: string[] = ['pikachu', 'pokemon 2', 'pokemon 3'];
   dresseurs: Dresseur[] = [
-    new Dresseur(1, 'dresseur 1', new Equipe(1, null)), //this.dresseur.equipe.getEquipe()),
-    new Dresseur(2, 'dresseur 2', new Equipe(2, null)), //this.dresseur.equipe.getEquipe()),
-    new Dresseur(2, 'dresseur 3', new Equipe(3, null)), //this.dresseur.equipe.getEquipe())
+    new Dresseur(1, 'dresseur 1', new Equipe(1, this.pokemonList)),
+    new Dresseur(2, 'dresseur 2', new Equipe(2, this.pokemonList)),
+    new Dresseur(2, 'dresseur 3', new Equipe(3, this.pokemonList)),
   ];
 
   getDresseurs() {

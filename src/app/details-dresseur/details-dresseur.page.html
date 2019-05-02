@@ -9,11 +9,14 @@
     <ion-label>Nom du dresseur</ion-label>
     <ion-label>{{dresseur.name}}</ion-label>
   </ion-item>
+<ion-item>
+    <ion-label>les pokemon</ion-label>
+    <ion-list *ngFor="let pokemon of this.ps.dresseur.equipe.listePokemon">
+        <ion-label>
+            <ion-label> {{pokemon}}, </ion-label>
+            {{this.ps.getPokemonByName(pokemon)}}
 
-            <ion-list *ngFor="let pokemon of this.ps.dresseur">
-                <ion-label>
-                  {{dresseur.equipe.getEquipe()}}
-                </ion-label>
-            </ion-list>
-
+        </ion-label>
+    </ion-list>
+</ion-item>
 </ion-content>
