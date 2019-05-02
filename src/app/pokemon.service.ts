@@ -8,7 +8,7 @@ import {Equipe} from './equipe';
 })
 export class PokemonService {
 
-  apiUrl: string = 'https://pokeapi.co/api/v2/pokemon/pikachu';
+  apiUrl: string = 'https://pokeapi.co/api/v2/';
 
   constructor(private http: HttpClient) { }
   dresseur: Dresseur;

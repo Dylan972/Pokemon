@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cherche</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <label>Quel Pokemon cherches-tu ?! </label>
+  <input type="text" [(ngModel)]="searchPokemon" name="searchPokemon" placeholder="Nom du pokemon">
+  <ion-button (click)="TrouverPokemon(searchPokemon)">Trouve le !</ion-button>
+
+  <H2> Nom du pokemon : {{ nomPokemon}} </H2>
+  <h2> Type du pokemon : {{ typePokemon }}</h2>
+  <h2> Attaques du pokemon : {{listAttaque[0].ability.name}} </h2>
+  <h2> Attaques du pokemon : {{listAttaque[1].ability.name}} </h2>
+
+
+</ion-content>
