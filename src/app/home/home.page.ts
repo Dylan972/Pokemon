@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {PokemonService} from '../pokemon.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,18 +11,13 @@ export class HomePage {
 
   nom: string;
   
-  constructor(private  apiService: PokemonService) {
-    
-    this.apiService.getPokemon().subscribe((val) => {
-      const result: any = val;
-      console.log('pokemon : ' + JSON.stringify(result));
-      console.log('pokemon : ' + JSON.stringify(result.abilities[0].ability.name));
+  constructor(private  apiService: PokemonService, private router: Router) {
 
-      console.log('pokemon : ' + JSON.stringify(result.name));
-
-    });
 
   }
-  
-  
-}
+
+    VerPageModifier() {
+        this.router.navigate(['/cherche']);
+    }
+  }
+
