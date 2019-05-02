@@ -4,24 +4,16 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      Liste de Pokémon
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+  <ion-item *ngFor="let one of all151">
+
+    <ion-item slot="start">{{ one.nom }}</ion-item>
+<!--    <img src="{{ one.photo }}" alt="photo du {{ one.nom }}">-->
+    <ion-item slot="end">Pokemon n° {{one.num}}</ion-item>
+  </ion-item>
 </ion-content>

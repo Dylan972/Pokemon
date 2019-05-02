@@ -10,6 +10,9 @@ export class PokemonService {
 
   apiUrl: string = 'https://pokeapi.co/api/v2/';
   apiUrlAbilite: string = 'https://pokeapi.co/api/v2/';
+  apiUrlList = 'https://pokeapi.co/api/v2/pokemon/?limit=807';
+
+
 
   constructor(private http: HttpClient) { }
   dresseur: Dresseur;
@@ -34,7 +37,7 @@ export class PokemonService {
     return this.dresseur;
   }
   getPokemon() {
-    return this.http.get(this.apiUrl);
+    return this.http.get(this.apiUrlList);
   }
 
   getPokemonByName(name: string) {

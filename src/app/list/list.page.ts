@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PokemonService} from '../pokemon.service';
 
 @Component({
   selector: 'app-list',
@@ -6,28 +7,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['list.page.scss']
 })
 export class ListPage implements OnInit {
-  private selectedItem: any;
-  private icons = [
-    'flask',
-    'wifi',
-    'beer',
-    'football',
-    'basketball',
-    'paper-plane',
-    'american-football',
-    'boat',
-    'bluetooth',
-    'build'
-  ];
-  public items: Array<{ title: string; note: string; icon: string }> = [];
-  constructor() {
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+
+  public nom: string;
+  public photo: string;
+  public all151: Array<{
+    nom;
+    // photo;
+    num
+  }> = [];
+
+  constructor(private apiService: PokemonService) {
+    this.apiService.getPokemon().subscribe((val) => {
+      const result: any = val;
+      /**
+       * Boucle pour les 151 premiers pokemon
+       */
+      for (let i = 0; i <= 151; i++) {
+        // this.nom = JSON.stringify(result.results[i].name);
+        this.nom = result.results[i].name;
+        // this.photo = result.results[i].sprites.front_default;
+        /**
+         * la constante nomMaj set la premiere lettre du nom du pokemmon en Majuscule
+         */
+        const nomMaj = this.nom.charAt(0).toUpperCase() + this.nom.slice(1);
+
+        // this.all151.push({nom: nomMaj, photo: this.photo, num: i + 1});
+        this.all151.push({nom: nomMaj, num: i + 1});
+
+        console.log('Pokemon : ' + JSON.stringify(this.nom));
+
+      }
+    });
   }
 
   ngOnInit() {
