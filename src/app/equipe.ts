@@ -1,11 +1,13 @@
+import {Pokemon} from './pokemon';
+
 export class Equipe {
     id: number;
-    listePokemon: string[];
+    listePokemon: Pokemon[];
 
-    constructor(id: number, listePokemon:string[]) {
+    constructor(id: number, listePokemon: Pokemon[]) {
         this.id = id;
         this.listePokemon = listePokemon;
     }
-    pokemons: string[] = ['pokemon 1', 'pokemon 2', 'pokemon 3'];
+    // pokemons: string[] = ['pokemon 1', 'pokemon 2', 'pokemon 3'];
 }
 
