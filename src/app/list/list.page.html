@@ -10,10 +10,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-item *ngFor="let one of all151">
+  <ion-item *ngFor="let one of pokemonList">
 
-    <ion-item slot="start">{{ one.nom }}</ion-item>
-<!--    <img src="{{ one.photo }}" alt="photo du {{ one.nom }}">-->
-    <ion-item slot="end">Pokemon n° {{one.num}}</ion-item>
+    <!--const nomMaj = this.nom.charAt(0).toUpperCase() + this.nom.slice(1);-->
+
+    <img src="{{ one.photo }}" alt="photo du {{ one.name }}">
+    <p >{{ this.one.name.charAt(0).toUpperCase() + this.one.name.slice(1) }}</p>
+    <p slot="end">N° {{one.id}}</p>
   </ion-item>
 </ion-content>
