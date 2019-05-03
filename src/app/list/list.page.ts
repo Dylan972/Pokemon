@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {PokemonService} from '../pokemon.service';
-import {Pokemon} from "../pokemon";
-import {forEach} from "@angular-devkit/schematics";
+import {Pokemon} from '../pokemon';
+import {forEach} from '@angular-devkit/schematics';
+import {Router} from '@angular/router';
+import {TransfertDataService} from "../transfert-data.service";
 
 @Component({
   selector: 'app-list',
@@ -13,8 +15,9 @@ export class ListPage implements OnInit {
   public nom: string;
   public pokemonList: Pokemon[];
   pokemon: Pokemon;
+  chose: string = 'dex';
 
-  constructor(private apiService: PokemonService) {
+  constructor(private apiService: PokemonService, private router: Router, private dataTransfert: TransfertDataService) {
     this.pokemonList = [];
     this.apiService.getPokemon().subscribe((val) => {
       const result: any = val;
@@ -44,6 +47,11 @@ export class ListPage implements OnInit {
         }));
       }
     });
+  }
+
+  goToDetail(chose: string) {
+    this.dataTransfert.setData(chose);
+    this.router.navigate(['detail-pokemon']);
   }
 
   ngOnInit() {

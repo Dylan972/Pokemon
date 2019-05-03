@@ -17,7 +17,9 @@ const routes: Routes = [
   },
   { path: 'cherche', loadChildren: './cherche/cherche.module#CherchePageModule' },
   {path: 'dresseur-liste', loadChildren: './dresseur-liste/dresseur-liste.module#DresseurListePageModule'},
-  {path: 'details-dresseur', loadChildren: './details-dresseur/details-dresseur.module#DetailsDresseurPageModule'}
+  {path: 'details-dresseur', loadChildren: './details-dresseur/details-dresseur.module#DetailsDresseurPageModule'},
+  { path: 'detail-pokemon', loadChildren: './detail.pokemon/detail.pokemon.module#DetailPokemonPageModule' }
+
 
 ];
 

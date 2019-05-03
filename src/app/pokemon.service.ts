@@ -33,16 +33,16 @@ export class PokemonService {
     console.log(this.dresseurs)
     return this.dresseurs;
   }
-  setDresseurs() {
-    console.log(this.dresseur)
-    for (let i = 0; i <= this.dresseurs.length; i++) {
-      this.dresseur = this.dresseurs[i];
-      const characterRef = firebase.database().ref('dresseurs/' + this.dresseur.name);
-      characterRef.set({
-        character: this.dresseur
-      });
-    }
-  }
+  // setDresseurs() {
+  //   console.log(this.dresseur)
+  //   for (let i = 0; i <= this.dresseurs.length; i++) {
+  //     this.dresseur = this.dresseurs[i];
+  //     const characterRef = firebase.database().ref('dresseurs/' + this.dresseur.name);
+  //     characterRef.set({
+  //       character: this.dresseur
+  //     });
+  //   }
+  // }
   setData(newData) {
     console.log(newData)
     this.dresseur = newData;

@@ -11,7 +11,7 @@ import {Dresseur} from '../dresseur';
 })
 export class DresseurListePage implements OnInit {
 
-  constructor(private router: Router, private ps: PokemonService) {this.ps.setDresseurs()}
+  constructor(private router: Router, private ps: PokemonService) {}
 
 
   detailsDresseur(dresseur: Dresseur) {

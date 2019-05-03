@@ -10,12 +10,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-item *ngFor="let one of pokemonList">
-
-    <!--const nomMaj = this.nom.charAt(0).toUpperCase() + this.nom.slice(1);-->
-
+  <ion-item *ngFor="let one of pokemonList" (click)="goToDetail(one.name)">
     <img src="{{ one.photo }}" alt="photo du {{ one.name }}">
-    <p >{{ this.one.name.charAt(0).toUpperCase() + this.one.name.slice(1) }}</p>
+    <p>{{ this.one.name.charAt(0).toUpperCase() + this.one.name.slice(1) }} </p>
     <p slot="end">N° {{one.id}}</p>
   </ion-item>
 </ion-content>
