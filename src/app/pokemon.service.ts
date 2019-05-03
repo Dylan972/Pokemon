@@ -23,9 +23,9 @@ export class PokemonService {
   pokemonList: Pokemon[] = [new Pokemon(1, 'un nom', null, null, '/url'), new Pokemon(2, 'un nom', null, null, '/url'), new Pokemon(3, 'un nom', null, null, '/url')];
   // pokemonList: string[] = ['pikachu', 'pokemon 2', 'pokemon 3'];
   dresseurs: Dresseur[] = [
-    new Dresseur(1, 'dresseur 1', new Equipe(1, this.pokemonList)),
-    new Dresseur(2, 'dresseur 2', new Equipe(2, this.pokemonList)),
-    new Dresseur(2, 'dresseur 3', new Equipe(3, this.pokemonList)),
+    new Dresseur(1, 'dresseur1', new Equipe(1, this.pokemonList)),
+    new Dresseur(2, 'dresseur2', new Equipe(2, this.pokemonList)),
+    new Dresseur(2, 'dresseur3', new Equipe(3, this.pokemonList)),
   ];
 
   getDresseurs() {
@@ -35,11 +35,11 @@ export class PokemonService {
   }
   setDresseurs() {
     console.log(this.dresseur)
-    for (let i = 0; i <= this.dresseurs.length; i++) {
+    for (let i = 0; i < this.dresseurs.length; i++) {
       this.dresseur = this.dresseurs[i];
       const characterRef = firebase.database().ref('dresseurs/' + this.dresseur.name);
       characterRef.set({
-        character: this.dresseur
+        listeEquipes: this.dresseur
       });
     }
   }
