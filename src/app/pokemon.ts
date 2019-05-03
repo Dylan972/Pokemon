@@ -8,8 +8,9 @@ export class Pokemon {
 
     constructor(id: number, name: string, type: string, abilities: string[], photo: string) {
         this.id = id;
-        this.type = type;
-        this.abilities = abilities;
+        this.type = null;
+        this.name = name;
+        this.abilities = null;
         this.photo = photo;
     }
 }
